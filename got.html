@@ -1,0 +1,418 @@
+
+<!DOCTYPE html>
+<html> 
+  <head>
+    <title>Game Of Thrones</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <meta charset="utf-8"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:400,500,700">
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700|Montserrat:400,400i,400,500,600,700,700i|Righteous' media='all' rel='stylesheet' type='text/css'/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="assets4/web/assets/mobirise-icons/mobirise-icons.css">
+    <script type="text/javascript" src="jquery-3.2.0.min"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+  <style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body{
+        font-family: 'Roboto Condensed', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url(https://i.imgur.com/tD0lL7I.png);
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        background-position-y: -70px;
+    }  
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+        position: fixed;
+        z-index: 15;
+        height: 50px;
+    }
+    li {
+          float: left;
+    }
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 17px 17px;
+        text-decoration: none;
+        transition: all 0.6s; 
+        cursor: pointer;
+    }
+    li a:hover {
+      
+          background-color: #111;
+    }
+    .active {
+          background-color: #4CAF50;
+    }
+    .s1{
+        position: center; 
+        text-align: center;
+        font-family: Montserrat;
+        display: block;
+        height: 100vh;
+        padding-top: 80px;
+    }
+
+   .s1 > h1{
+        font-size: 50px;
+        text-align:center;
+        color: #494747;
+        font-weight: 600;
+        padding: 60px;
+        padding-bottom: 0px;
+    /* text-shadow: 2px 2px 0 #444; */
+    }
+    .s2 >h1{
+        font-size: 30px;
+        text-align:center;
+        color: #494747;
+    /* text-shadow: 2px 2px 0 #444; */
+    }
+    .s2{
+        position: center; 
+        text-align: center;
+        margin: auto;
+        padding: 25px;
+        background-color: #fff;
+        display: block;
+    }
+      /*s3*/
+    .container{
+        width: 100%;
+        height: 250px;
+        margin: 0 auto;
+        position: relative;
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .inner-container {
+      position: absolute;
+      margin: auto;
+      width: 70%;
+      -webkit-transition: background 2s ;
+    }
+    .inner-container > img {
+        width: 200px;
+        border-radius: 50%;
+        margin: auto;
+        display: block;
+    }
+    .inner-container > h2 {
+        font-size: 24px;
+        color: #fff;
+        font-weight: 400;
+        font-style: italic;
+        line-height: 1.4;
+    }
+    .btn-prev, .btn-next {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border: none;
+        border-radius: 25px;
+        top: 100px;
+        background: black;
+        color: white;
+        font-size: 20px;
+        transition: all 0.7s;
+    }
+    .btn-prev {
+        left: 20px;
+    }
+    .btn-next {
+        right: 20px;
+    }
+    .btn-prev:hover, .btn-next:hover {
+        background-color: #2A2A2A;
+        font-size: 30px;
+    }
+    .s3{
+        position: center; 
+        text-align: center;
+        margin: auto;
+        padding: 10px;
+        background-color: #000;
+        display: block;
+    }
+    .s3 > h2 {
+        color: #fff;
+        margin: auto;
+        margin-bottom: 50px;
+        font-size: 35px;
+        text-align: center;
+    }
+    /*Fim s3*/
+    .s4{
+      position: center; 
+      text-align: center;
+      margin: auto;
+      padding: 25px;
+      background-image: url("https://i.imgur.com/lPvkC0E.png");
+
+      color: #fff;
+      display: block;
+    }
+    #q1{
+      height: 100px;
+      width: 100%;
+      float:left;
+      display:block:
+      margin: 0 auto;
+    }
+    .lg{
+        width: 7%;
+        float: left;
+        padding-right: 7px;
+        padding-left: 13px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .r{
+        text-align: center;
+        padding: 15px;
+        color: #fff;
+        background-color: #2a2a2a; 
+    }
+    .zl{
+        position: center; 
+        object-position: center;
+        padding-left: 100px;
+        font-family: 'Roboto Thin', sans-serif;
+        text-align: center;
+        float: left;
+        width: 38%;
+    }
+    .zl p{
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 21px;
+        font-border: 1px;
+        text-shadow: 1px 1px #000;
+        
+      }
+  ::selection {
+        background: transparent;
+        text-shadow: #000 0 0 2px;
+  } 
+  .slide{
+    -webkit-transition: background 1s;
+  }
+  .slide > h2{
+      font-family: 'Roboto Thin', sans-serif; 
+  }
+
+      /*Início das 4 Seções*/
+      /*#c1, #c2, #c3, #c4 {
+        display: none;
+      }*/
+
+      /*Fim das 4 Seções*/
+
+
+  </style>
+  </head>
+
+  <body>
+    <audio audio autoplay>
+      
+      <source src="https://ia801505.us.archive.org/19/items/HIWO5BUaD4bE.128/HIWO5BUaD4bE.128.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <ul>
+     <a href="index.html"> <img class="lg" src="https://3.bp.blogspot.com/-CX8hTY7487A/WgCVDqcR8tI/AAAAAAAAg40/XZuGirGfANoa4engYauJ8AuN03c4zhvogCLcBGAs/s1600/lg.png"></a>
+      <li><a href="got.html">Home</a></li>
+      <li><a href="#slider">Slides</a></li>
+      <li><a href="#a1">Artigo</a></li>
+      <li><a href="#a2">Sobre nós</a></li>
+      <li><a href="#a3">Projetos</a></li>   
+    </ul>
+
+    <section class ="s1" onload="sliderTimer()">
+      <h1>REINOS DE WESTEROS</h1>
+        <div id="slider">
+        <i id="left" class="fa fa-angle-left icon" onclick="prev()"></i>
+        <h2 id="sliderHeader">Casa Baratheon</h2>
+        <p id="sliderPara">Clique e veja mais sobre a casa!</p>
+        <i id="right" class="fa fa-angle-right icon" onclick="next()"></i>
+        <img id="sliderImg" src="images/1.png">
+
+        <section id="c1">
+            <h1>Casa Baratheon</h1>
+            <p> A Casa Baratheon de Ponta Tempestade, é uma das Grande Casas de Westeros e é a principal casa das Terras da Tempestade. Sua sede é em Ponta Tempestade, um castelo antigo construído pelos Reis da Tempestade. Seu brasão é um veado coroado negro num fundo dourado.﻿ Os membros da família tendem a ser grandes, com cabelo preto e olhos azuis. Eles são conhecidos por seus temperamentos vivos. Seu lema é Nossa é a Fúria. </p>
+            <img src="https://s-media-cache-ak0.pinimg.com/originals/99/e0/5a/99e05a4234a9cded690a860429564802.jpg"/>
+          </section>
+      </div>
+    </section>
+
+    <section id="c2">
+      <h1>Casa Targaryen</h1>
+      <img src="https://i.pinimg.com/originals/c4/96/07/c496073d00dfc7626c80dc949a5223b5.jpg">
+      <p>A Casa Targaryen é uma família nobre, descendentes da velha Valíria, que, por quase trezentos anos, governou os Sete Reinos de Westeros. O símbolo Targaryen é um dragão vermelho de três cabeças cuspindo fogo num fundo preto. Seu lema é "Fogo e Sangue".</p>
+    </section>
+
+    <section id="c3">
+      <h1> Casa Stark </h1>
+      <p> A Casa Stark de Winterfell é uma das Grandes Casas de Westeros e a principal casa nobre do Norte. Em tempos antigos, eles reinaram como Reis do Inverno, mas desde a Guerra da Conquista tem servido como Protetores do Norte para o Trono de Ferro, enquanto conservam seu título de lordes. Seu assento de poder é Winterfell, uma fortaleza antiga, renomada por sua força.
+
+      Seu símbolo é um lobo gigante correndo através de um campo branco. Seu lema é "O inverno está chegando", sendo uma das poucas casas nobres de Westeros que tem como seu lema não palavras de 'encorajamento' mas sim um 'aviso'. Vários personagens de ponto de vista (PDV) de As Crônicas de Gelo e Fogo são membros da Casa Stark. </p>
+      <img src="http://lostininternet.com/wp-content/uploads/2014/08/minimal-game-of-thrones-jerry-liu-01.jpg"/>
+    </section>
+
+    <section id="c4">
+      <h1>Casa Lannister</h1>
+      
+      <img src="https://i.pinimg.com/originals/fe/38/47/fe3847ffc52b61d48146c7b6adde01be.jpg">
+      <p>A Casa Lannister de Rochedo Casterly é uma das grandes casas nobres dos Sete Reinos e a maior, mais poderosa e importante das Terras Ocidentais. Seu assento de poder é a fortaleza de Rochedo Casterly, embora um ramo menor da casa exista na cidade de Lannisporto. Seu símbolo é um leão dourado em um campo carmesim. Seu lema oficial é "Ouça-me Rugir!". Contudo, um lema não-oficial, mas igualmente bem conhecido, é "Um Lannister sempre paga suas dívidas.</p>
+    </section>
+
+
+
+    <section class ="s2">
+      <h1 id="a1">Rebonbinando</h1>
+       <p style="color:#ff1c1c;">Alerta de Spoiler</p>
+       <p style="text-align: justify;">Depois de longas temporadas e uma sétima de tirar o folego, finalmente tivemos o aguardado reencontro de Daenerys com Jon Snow, uma conclusão final para o conflito entre as irmãs Stark e por fim depois de 7 temporada o inverno finalmente chegou em porto real. Foi uma longa jornada até onde chegamos, por fim, o <b>Seven Arts</b> está fazendo esse site dedicado a Game of Thrones, com preparativos para a última temporada da série que irá lançar em 2019, o rei da noite está chegando montado no falecido Viserion e seu exército de mortos, enquanto Bran e Sam confirma uma das teorias mais famosas da série, Jon Snow, na verdade é Aegon Targaryen, filho de Liana Stark e Rhaegar Targaryen, legitimo ao trono de ferro, será que essa aliança entre o “Stark” e a Mãe dos Dragões irá cair ao saber que seu aliado é legitimo ao trono? Teremos uma reviravolta depois de várias temporadas com a evolução de Daenerys como Líder e por fim Jon aceitando que tem força para governar o norte e assim também os sete reinos? Enquanto todos migram para o norte, Cersei Lannister vive em paz e sozinha (Com um zumbi-montanha do lado), aguardando a brisa de inverno, Jaime partiu e finalmente acordou para as loucuras da irmã, todas as casas começam a se reunir para a batalha final. Muitas dúvidas serão sanadas e teorias confirmadas ou não. Navegue pelo site procurando curiosidades e veja qual casa é a que mais te apetece logo acima. </p>
+    </section>
+  <section class = "s3"> 
+    <h2 id="a2">Criadores</h2> 
+    <div class="container" >
+      <div class="inner-container">
+        <img class="slides" src="https://scontent.frec10-1.fna.fbcdn.net/v/t1.0-9/23380391_1472788482837970_7888093638909305878_n.jpg?oh=3f2478571e2566b7e9f51209d81bf530&oe=5A950664"/>
+        <h2 style="color:#eda84e; font-weight: bold; font-style: normal;">Neto Vilela</h2> <h2 style="font-weight: 200; font-size: 20px;"> Programmer e Coder</h2>
+      </div>
+
+      <div class="inner-container">
+        <img class="slides" src="https://scontent.frec10-1.fna.fbcdn.net/v/t1.0-9/21231213_1511471402271390_2211818126785659786_n.jpg?oh=6b5f4750c18697b7ffc39ca545831856&oe=5A9AEB6D"/>
+        <h2 style="color:#eda84e; font-weight: bold; font-style: normal;">Mateus Guimarães</h2> <h2 style="font-weight: 200; font-size: 20px;">Designer e Coder</h2>
+      </div>
+
+      <button class="btn-prev" onclick="plusIndex(-1)">&#10094;</button>
+      <button class="btn-next" onclick="plusIndex(1)"> &#10095;</button>
+    </div>
+  </section>
+
+    <section class = "s4"> 
+      <h1 id="a3">Futuros Projetos</h1>
+      <div class= "zl">
+        <h2> League of Legends </h2>
+        <img src="https://1.bp.blogspot.com/-tmQm2z4Btvs/WgCpbs0ccoI/AAAAAAAAg6o/0x2KqQdfcnAG_ikzbSU5wGAE7_yA1gJ_wCLcBGAs/s400/lol.png">
+        <p>Site destinado a dicas, tecnicas e historia sobre o E-Sport League of Legends</p>
+      </div>
+
+      <div class="zl">
+        <h2> Zelda: Breath to the Wild</h2>
+        <img src="https://i.imgur.com/ACdgh5B.png?1">
+        <p>Site destinado a um especial de 31 anos de The Legend of Zelda</p>
+      </div>
+
+      <div style="clear: both"></div>
+    </section>
+
+    <footer class="r">
+       <p style="text-align: center;">Made by Seven Arts</p>
+    </footer>
+  </body> 
+
+  <script type="text/javascript">
+    var index =1;
+    function plusIndex(n){
+      index = index+ n;
+      showImage(index);
+    }
+    showImage(1); 
+    function showImage(n){
+      var i;
+      var x = document.getElementsByClassName("inner-container");
+      if(n > x.length){ index = 1};
+      if(n < 1){ index = x.length};
+      for(i=0; i<x.length; i++){
+        x[i].style.display ="none";
+      }
+      x[index-1].style.display ="block";
+    }
+  </script>
+  
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+    
+    var state = false;
+    var cont_slide = 1;
+    function prev(){
+      if(cont_slide != 1)
+        cont_slide--;
+      else
+        cont_slide = 4;
+
+      $("#sliderImg").attr("src","images/"+cont_slide+".png");
+      $("#sliderImg").html();
+    }
+    function next(){
+      if(cont_slide <4)
+        cont_slide++;
+      else
+        cont_slide = 1;
+      $("#sliderImg").attr("src","images/"+cont_slide+".png");
+
+    }
+    $('#sliderImg').click(function() {
+      if (state) {
+        $('#sliderImg').css('right', '300px');
+        $('#sliderHeader').css('opacity', '0');
+        $('#sliderPara').css('opacity', '0');
+            $('#c1').css('opacity', '1');
+            $('#c1').css('right', '10%');
+      } else {
+        $('#sliderImg').css('right', '0px');
+        $('#sliderHeader').css('opacity', '1');
+        $('#sliderPara').css('opacity', '1');
+            $('#c1').css('opacity', '0');
+            $('#c1').css('right', '15%');
+      }
+
+      state = !state;
+    });
+
+  </script>
+
+</html>
